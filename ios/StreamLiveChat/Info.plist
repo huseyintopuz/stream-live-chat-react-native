@@ -48,5 +48,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+    <string>StreamLiveChat requires camera access to capture and transmit video.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>StreamLiveChat requires microphone access to capture and transmit audio.</string>
 </dict>
 </plist>

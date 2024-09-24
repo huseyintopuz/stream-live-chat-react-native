@@ -1,3 +1,27 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "types": ["nativewind/types"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16",
+    "module": "Node16",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@screens/*": ["src/screens/*"],
+      "*.svg": ["src/assets/icons/*.svg"],
+      "@env": ["node_modules/react-native-dotenv"],
+      "typeRoots": ["src/types/.env.d.ts"],
+    },
+  },
+  "include": [
+    "nativewind-env.d.ts",
+    "App.tsx", "**/*.ts",
+    "**/*.tsx",
+    "./svg.d.ts",
+    "src/types/.env.d.ts",
+  ]
 }
