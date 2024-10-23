@@ -77,6 +77,7 @@ const RegisterScreen = () => {
       setIsSubmitting,
     });
   };
+  console.log(alertMessage);
 
   return (
     <SafeAreaView className="flex-1">
@@ -89,7 +90,7 @@ const RegisterScreen = () => {
       <View className="flex-1 justify-center items-center">
         <View className="w-4/5 bg-white border-[#EFEFEF] border rounded-2xl p-10 space-y-4">
           <View
-            className={`${padding} flex-row items-center bg-white border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
+            className={`${padding} flex-row items-center bg-[#fff] border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
             <UserIcon width={20} height={20} />
             <TextInput
               value={email}
@@ -101,7 +102,7 @@ const RegisterScreen = () => {
             />
           </View>
           <View
-            className={`${padding} flex-row items-center bg-white border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
+            className={`${padding} flex-row items-center bg-[#fff] border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
             <PasswordIcon width={20} height={20} />
             <TextInput
               value={password}
@@ -113,7 +114,7 @@ const RegisterScreen = () => {
             />
           </View>
           <View
-            className={`${padding} flex-row items-center bg-white border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
+            className={`${padding} flex-row items-center bg-[#fff] border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
             <PasswordIcon width={20} height={20} />
             <TextInput
               value={matchPassword}

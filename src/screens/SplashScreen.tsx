@@ -1,5 +1,4 @@
 import { RootStackParamList } from '@/types/types';
-import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { useEffect } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
@@ -9,35 +8,39 @@ type SplashScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   'SplashScreen'
 >;
-type SplashScreenRouteProp = RouteProp<RootStackParamList, 'SplashScreen'>;
-
 type SplashScreenProps = {
   navigation: SplashScreenNavigationProp;
-  route: SplashScreenRouteProp;
 };
 const SplashScreen = ({ navigation }: SplashScreenProps) => {
+  console.log('hello');
+
   useEffect(() => {
     const checkToken = async () => {
+      console.log('check token');
       try {
         const userToSaveJSON = await EncryptedStorage.getItem('token');
+        console.log({ userToSaveJSON });
+
         if (userToSaveJSON) {
           const userToSave = JSON.parse(userToSaveJSON);
           if (userToSave && userToSave.token) {
             navigation.replace('HomeScreen');
+            console.log('home');
           } else {
-            navigation.replace('Auth');
+            navigation.replace('AuthStackScreen');
           }
         } else {
-          navigation.replace('Auth');
+          navigation.replace('AuthStackScreen');
+          console.log('auth');
         }
       } catch (error) {
         console.error('Failed to retrieve token:', error);
-        navigation.replace('Auth');
+        navigation.replace('AuthStackScreen');
       }
     };
 
     checkToken();
-  }, []);
+  }, [navigation]);
 
   return (
     <View style={styles.container}>

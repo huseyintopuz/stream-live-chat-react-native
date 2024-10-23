@@ -1,14 +1,12 @@
 import { StackNavigationProp } from "@react-navigation/stack";
-import { StreamVideoClient } from "@stream-io/video-react-native-sdk";
-import React from "react";
 
 export type RootStackParamList = {
-    Auth: undefined;
+    AuthStackScreen: undefined;
     SplashScreen: undefined;
     HomeScreen: undefined;
-    LoginScreen: { successMessage?: string };
+    LoginScreen: { successMessage?: string | undefined };
     RegisterScreen: undefined;
-    RoomScreen: undefined;
+    CallScreen: { callId: string };
 };
 
 export type RegisterScreenNavigationProp = StackNavigationProp<
@@ -21,8 +19,6 @@ export type AuthContextType = {
     signOut: () => Promise<void>;
     user: UserType | null;
     isLoading: boolean;
-    client: StreamVideoClient | null;
-    setClient: React.Dispatch<React.SetStateAction<StreamVideoClient | null>>
 }
 
 export type UserType = {

@@ -20,6 +20,8 @@ export const handleSignIn = async ({
     signIn(user);
     navigation.replace('HomeScreen');
   } catch (err) {
+    console.log(err);
+
     setBottomAlertVisible(true);
     if (!err.response === 200) {
       setAlertMessage('Sunucu Yanıtı Yok');
@@ -58,7 +60,9 @@ export const registerUser = async ({
     });
   } catch (error) {
     setBottomAlertVisible(true);
-    setAlertMessage(error.response.data.error);
+    console.log(error.response.data);
+
+    setAlertMessage(error.response.data.error.message);
   } finally {
     setIsSubmitting(false);
   }

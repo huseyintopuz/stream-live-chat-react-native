@@ -1,11 +1,4 @@
-import {
-  View,
-  TextInput,
-  Platform,
-  SafeAreaView,
-  Button,
-  Text,
-} from 'react-native';
+import { View, TextInput, Platform, Button, Text } from 'react-native';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import UserIcon from '../assets/icons/user.svg';
 import PasswordIcon from '../assets/icons/padlock.svg';
@@ -88,10 +81,10 @@ const LoginScreen = ({ route, navigation }: Props) => {
         </Text>
       </View>
       <View className="justify-center items-center">
-        <View className="w-full bg-white border-[#EFEFEF] border rounded-2xl p-6 space-y-4">
+        <View className="w-full bg-white border-white border rounded-2xl p-6 space-y-4">
           <View
             className={` ${
-              isFocusedEmail ? 'bg-white' : 'bg-[#dfecf4]'
+              isFocusedEmail ? 'bg-white' : 'bg-white-100'
             } flex-row items-center border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
             <UserIcon width={20} height={20} />
             <TextInput
@@ -108,7 +101,7 @@ const LoginScreen = ({ route, navigation }: Props) => {
           {/*  */}
           <View
             className={` ${
-              isFocusedPassword ? 'bg-white' : 'bg-[#dfecf4]'
+              isFocusedPassword ? 'bg-white' : 'bg-white-100'
             } flex-row items-center  border border-gray-300 shadow pl-2 rounded-lg space-x-2`}>
             <PasswordIcon width={20} height={20} />
             <TextInput

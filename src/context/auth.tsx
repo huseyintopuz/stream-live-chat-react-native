@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import { AuthContextType, UserType } from '../types/types';
-import { StreamVideoClient } from '@stream-io/video-react-native-sdk';
 
 export const AuthContext = React.createContext<AuthContextType | null>(null);
 
 export function useAuth() {
-  return React.useContext(AuthContext);
+  return useContext(AuthContext);
 }
 
 type ProviderProps = {
@@ -16,7 +15,6 @@ type ProviderProps = {
 export function Provider({ children }: ProviderProps) {
   const [user, setAuth] = useState<UserType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [client, setClient] = useState<StreamVideoClient | null>(null);
 
   useEffect(() => {
     async function getUserFromStorage() {
@@ -56,8 +54,6 @@ export function Provider({ children }: ProviderProps) {
         signOut,
         user,
         isLoading,
-        client,
-        setClient,
       }}>
       {children}
     </AuthContext.Provider>
