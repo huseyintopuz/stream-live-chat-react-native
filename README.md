@@ -3,6 +3,7 @@ Stream Live Chat App
 A Stream Live Chat App which created with React Native.
 
 - Provides user registration and login functionalities.
+- I have created an API built with Express.js that provides user registration and login functionalities. you can access it with clicking https://github.com/huseyintopuz/stream-live-chat-express.
 - You can create a live video chat room or join in an available live video chat room.
 
 Technology Stacks
