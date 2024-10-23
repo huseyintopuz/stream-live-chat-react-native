@@ -1,6 +1,19 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Stream Live Chat App
+--------------------
+A Stream Live Chat App which created with React Native.
 
-# Getting Started
+- Provides user registration and login functionalities.
+- You can create a live video chat room or join in an available live video chat room.
+
+Technology Stacks
+-----------------
+- TypeScript
+- NativeWind allows you to use Tailwind CSS.
+- React Native Navigation
+- React Hooks
+- Context Api
+  
+# Getting Started 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
